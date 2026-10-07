@@ -1,0 +1,28 @@
+// Prisma Schema for Clinic Management System
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum RoleType {
+  ADMIN
+  DOCTOR
+  NURSE
+  RECEPTIONIST
+  PHARMACIST
+  CASHIER
+}
+
+model User {
+  id           String    @id @default(uuid())
+  email        String    @unique
+  passwordHash String
+  fullName     String
+  role         RoleType  @default(RECEPTIONIST)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}

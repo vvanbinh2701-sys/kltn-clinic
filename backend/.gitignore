@@ -1,0 +1,22 @@
+# Compiled output
+/dist
+/node_modules
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.production
+.env.staging
+
+# Logs
+/logs
+*.log
+npm-debug.log*
+
+# Uploads & Temp
+/uploads
+/tmp
+
+# OS files
+.DS_Store
+Thumbs.db
